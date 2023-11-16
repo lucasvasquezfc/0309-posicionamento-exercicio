@@ -13,23 +13,29 @@ body {
 }
 
 header {
-    margin: 60px 0;
+    margin: 60px auto;
     display: grid;
-    gap: 60px;
+    gap: 60px;    
+    max-width: 1000px; 
+    justify-items: center;   
 }
 
 h1,h3,p {    
     margin: 0;
 }
 
+ul,li {
+    margin: 0;
+    padding: 0;
+}
+
 img {
     max-width: 100%;
-    place-self: center;
 }
 
 a {
     border-radius: 4px;
-    padding: 15px 30px; 
+    padding: 1rem 2rem; 
     display: inline-block;
     text-decoration: none;
     text-transform: uppercase;    
@@ -58,13 +64,18 @@ nav a {
 }
 
 main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
     margin: auto;
     max-width: 1000px;    
 }
 
 article {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+}
+
+.introducao div{
     background-color: var(--white);
     padding: 40px;
     display: grid;
@@ -72,76 +83,84 @@ article {
     align-content: center;
     justify-items: end;
     gap: 20px;    
-    position: relative;
+    position: relative;   
 }
 
-article::after {
-    position: absolute;
+.introducao div::after {
     content: "";
-    top: 30px;
-    right: -30px;
+    position: absolute;
+    right: -1.875rem;
+    top: 1.875rem;
     border: solid 2px var(--red);
-    padding: 0 30px;
+    width: 3.75rem;
 }
 
-article a {    
+.introducao a {    
     color: var(--white);
     background-color: var(--red);
 }
 
-article a:hover {    
+.introducao a:hover {    
     box-shadow: none;
     background-color: var(--red-dark);
 }
 
-article h1 {
+.introducao h1 {
     text-align: right;
     font-size: 2rem;
 }
 
-article p {
+.introducao p {
     text-align: right;
     font-size: 1.25rem;
 }
 
-.bg {
-    background-image: url(img/onda.svg);
-    padding: 40px;
+.bg {     
+    padding: 2.5rem 0;
     display: grid;
+    grid-column: 1;
+    grid-row: 1/4;
 }
 
 .texto-grande {
-    color: var(--gray);
+    background-image: url(img/onda.svg);
+    color: var(--gray);    
     font-size: 4rem;
-     font-weight: bold;
+    font-weight: bold;
     text-align: right;
     place-self: center;
     text-transform: uppercase;
+    padding: 0 2.5rem;
 }
 
 .vantagens {
-    background-color: var(--white);
-    padding: 40px;
-}
-
-.vantagens div {
     display: grid;    
-    grid-template-columns: auto 1fr;    
-    grid-template-rows: auto auto;
-    align-items: center;
-    gap: 10px 20px;
-    padding: 20px;
+    grid-template-columns: 1fr 1fr;    
 }
 
-.vantagens div:hover {
-    border-left: solid 4px var(--red);
+
+
+.vantagens ul{  
+    background-color: var(--white);
+    padding: 2.5rem;
 }
 
-.vantagens div:nth-child(odd) {
+.vantagens li {
+    background-color: var(--white);
+    padding: 1.25rem;
+    display: grid;    
+    gap: 0.75rem 1.25rem;  
+}
+
+.vantagens li:hover {
+    border-left: solid 0.25rem var(--red);
+}
+
+.vantagens li:nth-child(odd) {
     background-color: var(--light-gray);
 }
 
-.vantagens p {
+.vantagens li p {
     grid-column: 2;
     font-size: 1.25rem;
 }
