@@ -5,6 +5,7 @@ body {
     --white: #fff;
     --gray: #c6c6c6;
     --black: #111;
+    --red-dark: #900;
 
     background-color: var(--light-gray);
     margin: auto;
@@ -90,27 +91,29 @@ article a {
 
 article a:hover {    
     box-shadow: none;
-    filter: brightness(1.2);
+    background-color: var(--red-dark);
 }
 
 article h1 {
     text-align: right;
-    font-size: 32px;
+    font-size: 2rem;
 }
 
 article p {
     text-align: right;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 .bg {
+    background-image: url(img/onda.svg);
     padding: 40px;
     display: grid;
 }
 
 .texto-grande {
     color: var(--gray);
-    font-size: 64px;
+    font-size: 4rem;
+     font-weight: bold;
     text-align: right;
     place-self: center;
     text-transform: uppercase;
@@ -126,9 +129,8 @@ article p {
     grid-template-columns: auto 1fr;    
     grid-template-rows: auto auto;
     align-items: center;
-    gap:10px;
-    padding: 15px;
-    cursor: crosshair;
+    gap: 10px 20px;
+    padding: 20px;
 }
 
 .vantagens div:hover {
@@ -141,6 +143,7 @@ article p {
 
 .vantagens p {
     grid-column: 2;
+    font-size: 1.25rem;
 }
 
 footer {
