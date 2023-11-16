@@ -17,13 +17,6 @@ header {
     gap: 60px;
 }
 
-main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: auto;
-    max-width: 1000px;
-}
-
 h1,h3,p {    
     margin: 0;
 }
@@ -63,6 +56,13 @@ nav a {
     background-color: var(--white);
 }
 
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+    max-width: 1000px;    
+}
+
 article {
     background-color: var(--white);
     padding: 40px;
@@ -70,7 +70,17 @@ article {
     align-items: center;
     align-content: center;
     justify-items: end;
-    gap: 20px;
+    gap: 20px;    
+    position: relative;
+}
+
+article::after {
+    position: absolute;
+    content: "";
+    top: 30px;
+    right: -30px;
+    border: solid 2px var(--red);
+    padding: 0 30px;
 }
 
 article a {    
@@ -118,6 +128,15 @@ article p {
     align-items: center;
     gap:10px;
     padding: 15px;
+    cursor: crosshair;
+}
+
+.vantagens div:hover {
+    border-left: solid 4px var(--red);
+}
+
+.vantagens div:nth-child(odd) {
+    background-color: var(--light-gray);
 }
 
 .vantagens p {
