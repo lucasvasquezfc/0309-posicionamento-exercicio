@@ -178,15 +178,26 @@ footer {
 @media (max-width: 900px) {
     .vantagens ul{  
         background-color: var(--white);
-        padding:0 ;
+        /* padding:0 ; */
     }
 
     .texto-grande {
-        padding: 0;
-    }    
+        text-align: center;
+        padding: 60px 0 0 30px;
+    }   
+    
+    .vantagens {
+        display: grid;    
+        grid-template-columns: 1fr;    
+    }  
 }
 
 @media (max-width: 650px) {
+
+    header {
+        margin: 20px auto;
+        gap: 20px;
+    }
 
     nav {
         width: 100%;
@@ -247,8 +258,21 @@ footer {
         grid-row: 1;
     }
 
-    .texto-grande {
-        text-align: left;
-        padding: 60px 0 0 30px;
+    .vantagens ul{  
+        padding:0 ;
+    }
+
+    .vantagens li:nth-child(odd) {
+        background-color: var(--white);
+    }
+
+    .vantagens li:nth-child(even) {
+        background-color:var(--light-gray);
     }    
+}
+
+@media (max-width: 450px) {
+    .texto-grande {
+        font-size: 2rem;
+    }   
 }
