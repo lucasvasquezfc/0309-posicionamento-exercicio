@@ -31,6 +31,9 @@ ul,li {
 
 img {
     max-width: 100%;
+    display: block;
+    object-fit: cover;
+    height: 100%;
 }
 
 a {
@@ -133,10 +136,10 @@ article {
     padding: 0 2.5rem;
 }
 
-.vantagens {
+/* .vantagens {
     display: grid;    
     grid-template-columns: 1fr 1fr;    
-}
+} */
 
 
 
@@ -170,4 +173,82 @@ footer {
     background-color: var(--white);
     padding: 60px;
     margin-top: 60px;
+}
+
+@media (max-width: 900px) {
+    .vantagens ul{  
+        background-color: var(--white);
+        padding:0 ;
+    }
+
+    .texto-grande {
+        padding: 0;
+    }    
+}
+
+@media (max-width: 650px) {
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul{
+        display: flex; 
+        flex-direction: column;
+        align-items: normal;
+        gap: 5px;
+        margin: 0;
+        padding: 0;
+       
+    }
+    
+    nav a {    
+        color: var(--black);
+        background-color: var(--white);
+        padding: 15px 0;
+        text-align: center;
+        margin: 0;
+        width: 100%;       
+        border-radius: 0;
+    }
+
+    article {
+        display: grid;    
+        grid-template-columns: 1fr;    
+    }  
+
+    .introducao div::after {
+        content: "";
+        position: absolute;
+        right: -1.875rem;
+        top: 1.875rem;
+        border: solid 2px var(--red);
+        width: 3.75rem;
+        display: none;
+    }
+    .introducao div::before {
+        content: "";
+        position: absolute;
+        right: 30px;
+        top: -30px;
+        border: solid 2px var(--red);
+        height: 3.75rem;
+    }
+
+    .introducao div{
+        justify-items: start;
+    }
+
+    .introducao h1, .introducao p {
+        text-align: left;
+    }
+
+    .introducao img {
+        grid-row: 1;
+    }
+
+    .texto-grande {
+        text-align: left;
+        padding: 60px 0 0 30px;
+    }    
 }
