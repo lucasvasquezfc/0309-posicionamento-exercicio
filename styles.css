@@ -1,16 +1,46 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
+:root {
     --light-gray: #f7f7f7; 
     --red: #ee2211;
     --white: #fff;
     --gray: #c6c6c6;
     --black: #111;
     --red-dark: #900;
+}
 
+body {
+    font-family: Arial, Helvetica, sans-serif; 
     background-color: var(--light-gray);
     margin: auto;
     box-sizing: border-box;
 }
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --light-gray: #222; 
+        --red: rgb(187, 72, 62);
+        --white: #191919;
+        --gray: #858585;
+        --black: #676666;
+        --red-dark: #900;
+    }
+
+    h1,h3 {    
+        color: #d1d1d1;
+    }
+
+    p {
+        color: var(--gray);
+    }
+
+    body {
+        background-color: var(--light-gray);
+    }
+
+    header img {
+        filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(270deg) brightness(104%) contrast(101%);;
+    }
+}
+  
 
 header {
     margin: 60px auto;
