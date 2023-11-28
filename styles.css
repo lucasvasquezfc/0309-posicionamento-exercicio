@@ -1,39 +1,24 @@
 :root {
-    --light-gray: #f7f7f7; 
-    --red: #ee2211;
-    --white: #fff;
-    --gray: #c6c6c6;
-    --black: #111;
-    --red-dark: #900;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif; 
-    background-color: var(--light-gray);
-    margin: auto;
-    box-sizing: border-box;
+    --cor-primaria: #ee2211;
+    --cor-primaria-escura: #900;
+    --fundo-1: #f7f7f7; 
+    --fundo-2: #fff;
+    --texto: #000;
+    --subtitulo: rgba(0,0,0,0.2);
+    --onda: url("./img/onda-clara.svg");
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --light-gray: #222; 
-        --red: rgb(187, 72, 62);
-        --white: #191919;
+        --cor-primaria: #ee2211;
+        --cor-primaria-escura: #900;
+        --fundo-1: #111; 
+        --fundo-2: #000;
         --gray: #858585;
-        --black: #676666;
-        --red-dark: #900;
-    }
-
-    h1,h3 {    
-        color: #d1d1d1;
-    }
-
-    p {
-        color: var(--gray);
-    }
-
-    body {
-        background-color: var(--light-gray);
+        --texto: #d2d2d2;
+        --botao: #fff;
+        --subtitulo: rgba(255,255,255,0.2);        
+        --onda: url("./img/onda-escura.svg");
     }
 
     header img {
@@ -41,6 +26,15 @@ body {
     }
 }
   
+
+body {
+    font-family: Arial, Helvetica, sans-serif; 
+    background-color: var(--fundo-1);
+    margin: auto;
+    box-sizing: border-box;
+    color: var(--texto);
+    background-color: var(--fundo-1);
+}
 
 header {
     margin: 60px auto;
@@ -76,7 +70,7 @@ a {
 }
 
 a:hover {
-    box-shadow: 0 0 0 2px var(--red);
+    box-shadow: 0 0 0 2px var(--cor-primaria);
 }
 
 nav ul{
@@ -92,13 +86,11 @@ nav li {
 }
 
 nav a {    
-    color: var(--black);
-    background-color: var(--white);
+    color: var(--texto);
+    background-color: var(--fundo-2);
 }
 
 main {
-    /* display: grid;
-    grid-template-columns: 1fr 1fr; */
     margin: auto;
     max-width: 1000px;    
 }
@@ -109,7 +101,7 @@ article {
 }
 
 .introducao div{
-    background-color: var(--white);
+    background-color: var(--fundo-2);
     padding: 40px;
     display: grid;
     align-items: center;
@@ -124,18 +116,18 @@ article {
     position: absolute;
     right: -1.875rem;
     top: 1.875rem;
-    border: solid 2px var(--red);
+    border: solid 2px var(--cor-primaria);
     width: 3.75rem;
 }
 
 .introducao a {    
-    color: var(--white);
-    background-color: var(--red);
+    color: var(--botao);
+    background-color: var(--cor-primaria);
 }
 
 .introducao a:hover {    
     box-shadow: none;
-    background-color: var(--red-dark);
+    background-color: var(--cor-primaria-escura);
 }
 
 .introducao h1 {
@@ -156,8 +148,8 @@ article {
 }
 
 .texto-grande {
-    background-image: url(img/onda.svg);
-    color: var(--gray);    
+    background-image: var(--onda);
+    color: var(--subtitulo);    
     font-size: 4rem;
     font-weight: bold;
     text-align: right;
@@ -166,31 +158,24 @@ article {
     padding: 0 2.5rem;
 }
 
-/* .vantagens {
-    display: grid;    
-    grid-template-columns: 1fr 1fr;    
-} */
-
-
-
 .vantagens ul{  
-    background-color: var(--white);
+    background-color: var(--fundo-2);
     padding: 2.5rem;
 }
 
 .vantagens li {
-    background-color: var(--white);
+    background-color: var(--fundo-2);
     padding: 1.25rem;
     display: grid;    
     gap: 0.75rem 1.25rem;  
 }
 
 .vantagens li:hover {
-    border-left: solid 0.25rem var(--red);
+    border-left: solid 0.25rem var(--cor-primaria);
 }
 
 .vantagens li:nth-child(odd) {
-    background-color: var(--light-gray);
+    background-color: var(--fundo-1);
 }
 
 .vantagens li p {
@@ -200,14 +185,14 @@ article {
 
 footer {
     text-align: center;
-    background-color: var(--white);
+    background-color: var(--fundo-2);
     padding: 60px;
     margin-top: 60px;
 }
 
 @media (max-width: 900px) {
     .vantagens ul{  
-        background-color: var(--white);
+        background-color: var(--fundo-2);
         /* padding:0 ; */
     }
 
@@ -244,8 +229,8 @@ footer {
     }
     
     nav a {    
-        color: var(--black);
-        background-color: var(--white);
+        color: var(--texto);
+        background-color: var(--fundo-2);
         padding: 15px 0;
         text-align: center;
         margin: 0;
@@ -263,7 +248,7 @@ footer {
         position: absolute;
         right: -1.875rem;
         top: 1.875rem;
-        border: solid 2px var(--red);
+        border: solid 2px var(--cor-primaria);
         width: 3.75rem;
         display: none;
     }
@@ -272,7 +257,7 @@ footer {
         position: absolute;
         right: 30px;
         top: -30px;
-        border: solid 2px var(--red);
+        border: solid 2px var(--cor-primaria);
         height: 3.75rem;
     }
 
@@ -293,11 +278,11 @@ footer {
     }
 
     .vantagens li:nth-child(odd) {
-        background-color: var(--white);
+        background-color: var(--fundo-2);
     }
 
     .vantagens li:nth-child(even) {
-        background-color:var(--light-gray);
+        background-color:var(--fundo-1);
     }    
 }
 
